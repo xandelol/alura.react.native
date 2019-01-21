@@ -1,8 +1,20 @@
 /** @format */
 
-import {AppRegistry} from 'react-native';
+import {Navigation} from 'react-native-navigation';
 import Feed from './src/components/Feed';
-import {name as appName} from './app.json';
 import Login from "./src/screens/Login";
 
-AppRegistry.registerComponent(appName, () => Login);
+Navigation.registerComponent('navigation.playground.Login', () => Login);
+Navigation.registerComponent('navigation.playground.Feed', () => Feed);
+
+Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setRoot({
+        root: {
+            component:{
+                name:'navigation.playground.Login'
+            }
+        }
+    });
+});
+
+
