@@ -56,7 +56,6 @@ export default class Login extends Component{
                                onchangeText={text => this.setState({senha: text})}
                                secureTextEntry={true}
                     />
-
                     <Button
                         style={styles.button}
                         title="Login"
